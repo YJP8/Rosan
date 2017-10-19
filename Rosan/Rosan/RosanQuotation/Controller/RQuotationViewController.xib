@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RQuotationViewController">
+            <connections>
+                <outlet property="bgView" destination="RMP-rs-sAg" id="Pmv-XX-GMI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="i60-Uf-f8Q" id="2Qq-rx-62m"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i60-Uf-f8Q">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="IMo-gK-avW"/>
+                    </connections>
+                </webView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMP-rs-sAg">
+                    <rect key="frame" x="0.0" y="64" width="375" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="n2i-cR-2NF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="i60-Uf-f8Q" secondAttribute="trailing" id="6fL-3x-CXQ"/>
+                <constraint firstItem="RMP-rs-sAg" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="A9k-tl-7Dg"/>
+                <constraint firstItem="RMP-rs-sAg" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Dz4-F3-qsH"/>
+                <constraint firstItem="i60-Uf-f8Q" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="HKA-re-Pmk"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="i60-Uf-f8Q" secondAttribute="bottom" id="XoK-ao-55j"/>
+                <constraint firstItem="RMP-rs-sAg" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="fNQ-pQ-eYH"/>
+                <constraint firstItem="i60-Uf-f8Q" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="zQe-Tx-efJ"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RClassCollectionViewCell" id="gTV-IL-0wX" customClass="RClassCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9X6-sP-1s1">
+                        <rect key="frame" x="23" y="8" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="6vl-0E-DTe"/>
+                            <constraint firstAttribute="width" constant="24" id="snk-nU-CYH"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="租赁订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K8a-fM-zWz">
+                        <rect key="frame" x="5" y="35" width="60" height="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="K8a-fM-zWz" firstAttribute="top" secondItem="9X6-sP-1s1" secondAttribute="bottom" constant="3" id="DBy-XO-ZCx"/>
+                <constraint firstItem="K8a-fM-zWz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="IOl-Ey-YKV"/>
+                <constraint firstAttribute="trailing" secondItem="K8a-fM-zWz" secondAttribute="trailing" constant="5" id="MkG-Cb-M4G"/>
+                <constraint firstItem="9X6-sP-1s1" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Yv6-qx-FzL"/>
+                <constraint firstItem="9X6-sP-1s1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="gLJ-8Y-o5Z"/>
+                <constraint firstAttribute="bottom" secondItem="K8a-fM-zWz" secondAttribute="bottom" constant="10" id="kHP-Ve-kEL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="icon_img" destination="9X6-sP-1s1" id="YHe-17-E2S"/>
+                <outlet property="name_title" destination="K8a-fM-zWz" id="uac-Zc-8lS"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

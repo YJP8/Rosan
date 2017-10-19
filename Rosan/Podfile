@@ -1,0 +1,11 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'Rosan' do
+    pod 'Toast'
+    pod 'AFNetworking'
+    pod 'IQKeyboardManager'
+    pod 'SDCycleScrollView'
+    pod 'SDWebImage'
+    pod 'MJRefresh'
+end

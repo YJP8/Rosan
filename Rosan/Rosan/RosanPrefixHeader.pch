@@ -1,0 +1,20 @@
+//
+//  RosanPrefixHeader.pch
+//  Rosan
+//
+//  Created by Levante on 2017/9/26.
+//  Copyright © 2017年 Levante. All rights reserved.
+//
+
+#ifndef RosanPrefixHeader_pch
+#define RosanPrefixHeader_pch
+
+#import "RosanControllerManager.h"
+#import "ParameterHeader.h"
+#import <MJRefresh/MJRefresh.h>
+#import <SDCycleScrollView/SDCycleScrollView.h>
+#import <Toast/UIView+Toast.h>
+#import <SDWebImage/UIView+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+#endif /* RosanPrefixHeader_pch */

@@ -1,0 +1,866 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		098E22457930B8D52D10E9C2 /* Pods_Rosan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C4BDF5A555548B689949D2 /* Pods_Rosan.framework */; };
+		9A0AB57B1F7AA05E008BD858 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AB57A1F7AA05E008BD858 /* AppDelegate.m */; };
+		9A0AB57E1F7AA05E008BD858 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AB57D1F7AA05E008BD858 /* ViewController.m */; };
+		9A0AB5811F7AA05E008BD858 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0AB57F1F7AA05E008BD858 /* Main.storyboard */; };
+		9A0AB5831F7AA05E008BD858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0AB5821F7AA05E008BD858 /* Assets.xcassets */; };
+		9A0AB5861F7AA05E008BD858 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0AB5841F7AA05E008BD858 /* LaunchScreen.storyboard */; };
+		9A0AB5891F7AA05E008BD858 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AB5881F7AA05E008BD858 /* main.m */; };
+		9A0AB5931F7AA05E008BD858 /* RosanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AB5921F7AA05E008BD858 /* RosanUITests.m */; };
+		9A0AB5A51F7AA091008BD858 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AB5A31F7AA091008BD858 /* FirstViewController.m */; };
+		9A0AB5A61F7AA091008BD858 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A0AB5A41F7AA091008BD858 /* FirstViewController.xib */; };
+		9A481FEF1F7B7552008DE239 /* RHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A481FEE1F7B7552008DE239 /* RHomeModel.m */; };
+		9A481FF31F7B7C57008DE239 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A481FF11F7B7C57008DE239 /* LiveViewController.m */; };
+		9A481FF41F7B7C57008DE239 /* LiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A481FF21F7B7C57008DE239 /* LiveViewController.xib */; };
+		9A481FF81F7B7DCF008DE239 /* LiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A481FF61F7B7DCF008DE239 /* LiveTableViewCell.m */; };
+		9A481FF91F7B7DCF008DE239 /* LiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A481FF71F7B7DCF008DE239 /* LiveTableViewCell.xib */; };
+		9A481FFD1F7B895B008DE239 /* RLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A481FFB1F7B895B008DE239 /* RLoginViewController.m */; };
+		9A481FFE1F7B895B008DE239 /* RLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A481FFC1F7B895B008DE239 /* RLoginViewController.xib */; };
+		9A4820021F7B8C2D008DE239 /* RegiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4820001F7B8C2D008DE239 /* RegiftViewController.m */; };
+		9A4820031F7B8C2D008DE239 /* RegiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4820011F7B8C2D008DE239 /* RegiftViewController.xib */; };
+		9A4A96611F7B43FC0023110F /* RClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A965F1F7B43FC0023110F /* RClassTableViewCell.m */; };
+		9A4A96621F7B43FC0023110F /* RClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A96601F7B43FC0023110F /* RClassTableViewCell.xib */; };
+		9A4A96661F7B44550023110F /* RClassCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A96641F7B44550023110F /* RClassCollectionViewCell.m */; };
+		9A4A96671F7B44550023110F /* RClassCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A96651F7B44550023110F /* RClassCollectionViewCell.xib */; };
+		9A4A966B1F7B4B410023110F /* RCalendarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A96691F7B4B410023110F /* RCalendarTableViewCell.m */; };
+		9A4A966C1F7B4B410023110F /* RCalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A966A1F7B4B410023110F /* RCalendarTableViewCell.xib */; };
+		9AA6D87F1F7AA26100E40662 /* TViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6D87D1F7AA26100E40662 /* TViewController.m */; };
+		9AA6D8801F7AA26100E40662 /* TViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6D87E1F7AA26100E40662 /* TViewController.xib */; };
+		9AA6D8871F7AA84E00E40662 /* RosanBsaeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6D8861F7AA84E00E40662 /* RosanBsaeViewController.m */; };
+		9AA6D88A1F7AA91300E40662 /* RosanControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6D8891F7AA91300E40662 /* RosanControllerManager.m */; };
+		9AA6D88E1F7AAA7700E40662 /* RosanNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6D88D1F7AAA7700E40662 /* RosanNavigationController.m */; };
+		9AA6D8A21F7AAC1200E40662 /* RHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6D8A01F7AAC1200E40662 /* RHomeViewController.m */; };
+		9AA6D8A31F7AAC1200E40662 /* RHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6D8A11F7AAC1200E40662 /* RHomeViewController.xib */; };
+		9AA6D8A71F7AAC3200E40662 /* RQuotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6D8A51F7AAC3200E40662 /* RQuotationViewController.m */; };
+		9AA6D8A81F7AAC3200E40662 /* RQuotationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6D8A61F7AAC3200E40662 /* RQuotationViewController.xib */; };
+		9AA6D8AC1F7AAC4200E40662 /* RNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6D8AA1F7AAC4200E40662 /* RNewsViewController.m */; };
+		9AA6D8AD1F7AAC4200E40662 /* RNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6D8AB1F7AAC4200E40662 /* RNewsViewController.xib */; };
+		9AA6D8B11F7AAC4E00E40662 /* RMYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6D8AF1F7AAC4E00E40662 /* RMYViewController.m */; };
+		9AA6D8B21F7AAC4E00E40662 /* RMYViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6D8B01F7AAC4E00E40662 /* RMYViewController.xib */; };
+		9AA6D8B51F7AAD0300E40662 /* UIImage+Cropping.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6D8B41F7AAD0300E40662 /* UIImage+Cropping.m */; };
+		9AB1741A1F7B633C00629E17 /* RGoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB174181F7B633C00629E17 /* RGoodTableViewCell.m */; };
+		9AB1741B1F7B633C00629E17 /* RGoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB174191F7B633C00629E17 /* RGoodTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A0AB58F1F7AA05E008BD858 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A0AB56E1F7AA05E008BD858 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A0AB5751F7AA05E008BD858;
+			remoteInfo = Rosan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D3353AB004471143DDE2E8E /* Pods-Rosan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rosan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rosan/Pods-Rosan.release.xcconfig"; sourceTree = "<group>"; };
+		14C4BDF5A555548B689949D2 /* Pods_Rosan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rosan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0AB5761F7AA05E008BD858 /* Rosan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rosan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0AB5791F7AA05E008BD858 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9A0AB57A1F7AA05E008BD858 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9A0AB57C1F7AA05E008BD858 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9A0AB57D1F7AA05E008BD858 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9A0AB5801F7AA05E008BD858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9A0AB5821F7AA05E008BD858 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A0AB5851F7AA05E008BD858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A0AB5871F7AA05E008BD858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A0AB5881F7AA05E008BD858 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9A0AB58E1F7AA05E008BD858 /* RosanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RosanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0AB5921F7AA05E008BD858 /* RosanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RosanUITests.m; sourceTree = "<group>"; };
+		9A0AB5941F7AA05E008BD858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A0AB5A21F7AA090008BD858 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		9A0AB5A31F7AA091008BD858 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		9A0AB5A41F7AA091008BD858 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		9A481FED1F7B7552008DE239 /* RHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RHomeModel.h; sourceTree = "<group>"; };
+		9A481FEE1F7B7552008DE239 /* RHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RHomeModel.m; sourceTree = "<group>"; };
+		9A481FF01F7B7C57008DE239 /* LiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveViewController.h; sourceTree = "<group>"; };
+		9A481FF11F7B7C57008DE239 /* LiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveViewController.m; sourceTree = "<group>"; };
+		9A481FF21F7B7C57008DE239 /* LiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveViewController.xib; sourceTree = "<group>"; };
+		9A481FF51F7B7DCF008DE239 /* LiveTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveTableViewCell.h; sourceTree = "<group>"; };
+		9A481FF61F7B7DCF008DE239 /* LiveTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveTableViewCell.m; sourceTree = "<group>"; };
+		9A481FF71F7B7DCF008DE239 /* LiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveTableViewCell.xib; sourceTree = "<group>"; };
+		9A481FFA1F7B895B008DE239 /* RLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLoginViewController.h; sourceTree = "<group>"; };
+		9A481FFB1F7B895B008DE239 /* RLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLoginViewController.m; sourceTree = "<group>"; };
+		9A481FFC1F7B895B008DE239 /* RLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RLoginViewController.xib; sourceTree = "<group>"; };
+		9A481FFF1F7B8C2D008DE239 /* RegiftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegiftViewController.h; sourceTree = "<group>"; };
+		9A4820001F7B8C2D008DE239 /* RegiftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegiftViewController.m; sourceTree = "<group>"; };
+		9A4820011F7B8C2D008DE239 /* RegiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegiftViewController.xib; sourceTree = "<group>"; };
+		9A4A965E1F7B43FC0023110F /* RClassTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RClassTableViewCell.h; sourceTree = "<group>"; };
+		9A4A965F1F7B43FC0023110F /* RClassTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RClassTableViewCell.m; sourceTree = "<group>"; };
+		9A4A96601F7B43FC0023110F /* RClassTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RClassTableViewCell.xib; sourceTree = "<group>"; };
+		9A4A96631F7B44550023110F /* RClassCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RClassCollectionViewCell.h; sourceTree = "<group>"; };
+		9A4A96641F7B44550023110F /* RClassCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RClassCollectionViewCell.m; sourceTree = "<group>"; };
+		9A4A96651F7B44550023110F /* RClassCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RClassCollectionViewCell.xib; sourceTree = "<group>"; };
+		9A4A96681F7B4B410023110F /* RCalendarTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCalendarTableViewCell.h; sourceTree = "<group>"; };
+		9A4A96691F7B4B410023110F /* RCalendarTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCalendarTableViewCell.m; sourceTree = "<group>"; };
+		9A4A966A1F7B4B410023110F /* RCalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RCalendarTableViewCell.xib; sourceTree = "<group>"; };
+		9AA6D87C1F7AA26100E40662 /* TViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TViewController.h; sourceTree = "<group>"; };
+		9AA6D87D1F7AA26100E40662 /* TViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TViewController.m; sourceTree = "<group>"; };
+		9AA6D87E1F7AA26100E40662 /* TViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TViewController.xib; sourceTree = "<group>"; };
+		9AA6D8851F7AA84E00E40662 /* RosanBsaeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RosanBsaeViewController.h; sourceTree = "<group>"; };
+		9AA6D8861F7AA84E00E40662 /* RosanBsaeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RosanBsaeViewController.m; sourceTree = "<group>"; };
+		9AA6D8881F7AA91300E40662 /* RosanControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RosanControllerManager.h; sourceTree = "<group>"; };
+		9AA6D8891F7AA91300E40662 /* RosanControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RosanControllerManager.m; sourceTree = "<group>"; };
+		9AA6D88B1F7AA94800E40662 /* RosanPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RosanPrefixHeader.pch; sourceTree = "<group>"; };
+		9AA6D88C1F7AAA7700E40662 /* RosanNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RosanNavigationController.h; sourceTree = "<group>"; };
+		9AA6D88D1F7AAA7700E40662 /* RosanNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RosanNavigationController.m; sourceTree = "<group>"; };
+		9AA6D89F1F7AAC1200E40662 /* RHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RHomeViewController.h; sourceTree = "<group>"; };
+		9AA6D8A01F7AAC1200E40662 /* RHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RHomeViewController.m; sourceTree = "<group>"; };
+		9AA6D8A11F7AAC1200E40662 /* RHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RHomeViewController.xib; sourceTree = "<group>"; };
+		9AA6D8A41F7AAC3200E40662 /* RQuotationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RQuotationViewController.h; sourceTree = "<group>"; };
+		9AA6D8A51F7AAC3200E40662 /* RQuotationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RQuotationViewController.m; sourceTree = "<group>"; };
+		9AA6D8A61F7AAC3200E40662 /* RQuotationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RQuotationViewController.xib; sourceTree = "<group>"; };
+		9AA6D8A91F7AAC4200E40662 /* RNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNewsViewController.h; sourceTree = "<group>"; };
+		9AA6D8AA1F7AAC4200E40662 /* RNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNewsViewController.m; sourceTree = "<group>"; };
+		9AA6D8AB1F7AAC4200E40662 /* RNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RNewsViewController.xib; sourceTree = "<group>"; };
+		9AA6D8AE1F7AAC4E00E40662 /* RMYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMYViewController.h; sourceTree = "<group>"; };
+		9AA6D8AF1F7AAC4E00E40662 /* RMYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMYViewController.m; sourceTree = "<group>"; };
+		9AA6D8B01F7AAC4E00E40662 /* RMYViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RMYViewController.xib; sourceTree = "<group>"; };
+		9AA6D8B31F7AAD0300E40662 /* UIImage+Cropping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cropping.h"; sourceTree = "<group>"; };
+		9AA6D8B41F7AAD0300E40662 /* UIImage+Cropping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cropping.m"; sourceTree = "<group>"; };
+		9AA6D8B61F7AAF3E00E40662 /* ParameterHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParameterHeader.h; sourceTree = "<group>"; };
+		9AB174171F7B633C00629E17 /* RGoodTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGoodTableViewCell.h; sourceTree = "<group>"; };
+		9AB174181F7B633C00629E17 /* RGoodTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGoodTableViewCell.m; sourceTree = "<group>"; };
+		9AB174191F7B633C00629E17 /* RGoodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RGoodTableViewCell.xib; sourceTree = "<group>"; };
+		EF2600E92E5EEAFAEEE97A14 /* Pods-Rosan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rosan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rosan/Pods-Rosan.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A0AB5731F7AA05E008BD858 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				098E22457930B8D52D10E9C2 /* Pods_Rosan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A0AB58B1F7AA05E008BD858 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		445A51951384BAD617F5D0F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF2600E92E5EEAFAEEE97A14 /* Pods-Rosan.debug.xcconfig */,
+				0D3353AB004471143DDE2E8E /* Pods-Rosan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		707E36C889E9C9297FC8BC6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14C4BDF5A555548B689949D2 /* Pods_Rosan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A0AB56D1F7AA05E008BD858 = {
+			isa = PBXGroup;
+			children = (
+				9A0AB5781F7AA05E008BD858 /* Rosan */,
+				9A0AB5911F7AA05E008BD858 /* RosanUITests */,
+				9A0AB5771F7AA05E008BD858 /* Products */,
+				445A51951384BAD617F5D0F9 /* Pods */,
+				707E36C889E9C9297FC8BC6A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9A0AB5771F7AA05E008BD858 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A0AB5761F7AA05E008BD858 /* Rosan.app */,
+				9A0AB58E1F7AA05E008BD858 /* RosanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A0AB5781F7AA05E008BD858 /* Rosan */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D8811F7AA83300E40662 /* RosanBase */,
+				9AA6D8931F7AABCA00E40662 /* RosanHome */,
+				9AA6D89B1F7AABE400E40662 /* RosanQuotation */,
+				9AA6D8971F7AABCA00E40662 /* RosanNews */,
+				9AA6D88F1F7AABCA00E40662 /* MY */,
+				9A0AB5791F7AA05E008BD858 /* AppDelegate.h */,
+				9A0AB57A1F7AA05E008BD858 /* AppDelegate.m */,
+				9A0AB57C1F7AA05E008BD858 /* ViewController.h */,
+				9A0AB57D1F7AA05E008BD858 /* ViewController.m */,
+				9A0AB57F1F7AA05E008BD858 /* Main.storyboard */,
+				9AA6D87C1F7AA26100E40662 /* TViewController.h */,
+				9AA6D87D1F7AA26100E40662 /* TViewController.m */,
+				9AA6D87E1F7AA26100E40662 /* TViewController.xib */,
+				9A0AB5A21F7AA090008BD858 /* FirstViewController.h */,
+				9A0AB5A31F7AA091008BD858 /* FirstViewController.m */,
+				9A0AB5A41F7AA091008BD858 /* FirstViewController.xib */,
+				9A0AB5821F7AA05E008BD858 /* Assets.xcassets */,
+				9A0AB5841F7AA05E008BD858 /* LaunchScreen.storyboard */,
+				9AA6D88B1F7AA94800E40662 /* RosanPrefixHeader.pch */,
+				9AA6D8B61F7AAF3E00E40662 /* ParameterHeader.h */,
+				9A0AB5871F7AA05E008BD858 /* Info.plist */,
+				9A0AB5881F7AA05E008BD858 /* main.m */,
+			);
+			path = Rosan;
+			sourceTree = "<group>";
+		};
+		9A0AB5911F7AA05E008BD858 /* RosanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9A0AB5921F7AA05E008BD858 /* RosanUITests.m */,
+				9A0AB5941F7AA05E008BD858 /* Info.plist */,
+			);
+			path = RosanUITests;
+			sourceTree = "<group>";
+		};
+		9AA6D8811F7AA83300E40662 /* RosanBase */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D8821F7AA83300E40662 /* Controller */,
+				9AA6D8831F7AA83300E40662 /* Model */,
+				9AA6D8841F7AA83300E40662 /* View */,
+			);
+			path = RosanBase;
+			sourceTree = "<group>";
+		};
+		9AA6D8821F7AA83300E40662 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D8851F7AA84E00E40662 /* RosanBsaeViewController.h */,
+				9AA6D8861F7AA84E00E40662 /* RosanBsaeViewController.m */,
+				9AA6D8881F7AA91300E40662 /* RosanControllerManager.h */,
+				9AA6D8891F7AA91300E40662 /* RosanControllerManager.m */,
+				9AA6D88C1F7AAA7700E40662 /* RosanNavigationController.h */,
+				9AA6D88D1F7AAA7700E40662 /* RosanNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AA6D8831F7AA83300E40662 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AA6D8841F7AA83300E40662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D8B31F7AAD0300E40662 /* UIImage+Cropping.h */,
+				9AA6D8B41F7AAD0300E40662 /* UIImage+Cropping.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AA6D88F1F7AABCA00E40662 /* MY */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D8901F7AABCA00E40662 /* Controller */,
+				9AA6D8911F7AABCA00E40662 /* Model */,
+				9AA6D8921F7AABCA00E40662 /* View */,
+			);
+			path = MY;
+			sourceTree = "<group>";
+		};
+		9AA6D8901F7AABCA00E40662 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D8AE1F7AAC4E00E40662 /* RMYViewController.h */,
+				9AA6D8AF1F7AAC4E00E40662 /* RMYViewController.m */,
+				9AA6D8B01F7AAC4E00E40662 /* RMYViewController.xib */,
+				9A481FFA1F7B895B008DE239 /* RLoginViewController.h */,
+				9A481FFB1F7B895B008DE239 /* RLoginViewController.m */,
+				9A481FFC1F7B895B008DE239 /* RLoginViewController.xib */,
+				9A481FFF1F7B8C2D008DE239 /* RegiftViewController.h */,
+				9A4820001F7B8C2D008DE239 /* RegiftViewController.m */,
+				9A4820011F7B8C2D008DE239 /* RegiftViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AA6D8911F7AABCA00E40662 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AA6D8921F7AABCA00E40662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AA6D8931F7AABCA00E40662 /* RosanHome */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D8941F7AABCA00E40662 /* Controller */,
+				9AA6D8951F7AABCA00E40662 /* Model */,
+				9AA6D8961F7AABCA00E40662 /* View */,
+			);
+			path = RosanHome;
+			sourceTree = "<group>";
+		};
+		9AA6D8941F7AABCA00E40662 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D89F1F7AAC1200E40662 /* RHomeViewController.h */,
+				9AA6D8A01F7AAC1200E40662 /* RHomeViewController.m */,
+				9AA6D8A11F7AAC1200E40662 /* RHomeViewController.xib */,
+				9A481FF01F7B7C57008DE239 /* LiveViewController.h */,
+				9A481FF11F7B7C57008DE239 /* LiveViewController.m */,
+				9A481FF21F7B7C57008DE239 /* LiveViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AA6D8951F7AABCA00E40662 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A481FED1F7B7552008DE239 /* RHomeModel.h */,
+				9A481FEE1F7B7552008DE239 /* RHomeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AA6D8961F7AABCA00E40662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A965E1F7B43FC0023110F /* RClassTableViewCell.h */,
+				9A4A965F1F7B43FC0023110F /* RClassTableViewCell.m */,
+				9A4A96601F7B43FC0023110F /* RClassTableViewCell.xib */,
+				9A4A96631F7B44550023110F /* RClassCollectionViewCell.h */,
+				9A4A96641F7B44550023110F /* RClassCollectionViewCell.m */,
+				9A4A96651F7B44550023110F /* RClassCollectionViewCell.xib */,
+				9A4A96681F7B4B410023110F /* RCalendarTableViewCell.h */,
+				9A4A96691F7B4B410023110F /* RCalendarTableViewCell.m */,
+				9A4A966A1F7B4B410023110F /* RCalendarTableViewCell.xib */,
+				9AB174171F7B633C00629E17 /* RGoodTableViewCell.h */,
+				9AB174181F7B633C00629E17 /* RGoodTableViewCell.m */,
+				9AB174191F7B633C00629E17 /* RGoodTableViewCell.xib */,
+				9A481FF51F7B7DCF008DE239 /* LiveTableViewCell.h */,
+				9A481FF61F7B7DCF008DE239 /* LiveTableViewCell.m */,
+				9A481FF71F7B7DCF008DE239 /* LiveTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AA6D8971F7AABCA00E40662 /* RosanNews */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D8981F7AABCA00E40662 /* Controller */,
+				9AA6D8991F7AABCA00E40662 /* Model */,
+				9AA6D89A1F7AABCA00E40662 /* View */,
+			);
+			path = RosanNews;
+			sourceTree = "<group>";
+		};
+		9AA6D8981F7AABCA00E40662 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D8A91F7AAC4200E40662 /* RNewsViewController.h */,
+				9AA6D8AA1F7AAC4200E40662 /* RNewsViewController.m */,
+				9AA6D8AB1F7AAC4200E40662 /* RNewsViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AA6D8991F7AABCA00E40662 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AA6D89A1F7AABCA00E40662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AA6D89B1F7AABE400E40662 /* RosanQuotation */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D89C1F7AABE400E40662 /* Controller */,
+				9AA6D89D1F7AABE400E40662 /* Model */,
+				9AA6D89E1F7AABE400E40662 /* View */,
+			);
+			path = RosanQuotation;
+			sourceTree = "<group>";
+		};
+		9AA6D89C1F7AABE400E40662 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6D8A41F7AAC3200E40662 /* RQuotationViewController.h */,
+				9AA6D8A51F7AAC3200E40662 /* RQuotationViewController.m */,
+				9AA6D8A61F7AAC3200E40662 /* RQuotationViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AA6D89D1F7AABE400E40662 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AA6D89E1F7AABE400E40662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A0AB5751F7AA05E008BD858 /* Rosan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A0AB5971F7AA05E008BD858 /* Build configuration list for PBXNativeTarget "Rosan" */;
+			buildPhases = (
+				1794B2FB4985C7F6E47C2CDD /* [CP] Check Pods Manifest.lock */,
+				9A0AB5721F7AA05E008BD858 /* Sources */,
+				9A0AB5731F7AA05E008BD858 /* Frameworks */,
+				9A0AB5741F7AA05E008BD858 /* Resources */,
+				E3DB6B4E86DB10EFF0672B5E /* [CP] Embed Pods Frameworks */,
+				C8F1BD2F6E07B32224E26932 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rosan;
+			productName = Rosan;
+			productReference = 9A0AB5761F7AA05E008BD858 /* Rosan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A0AB58D1F7AA05E008BD858 /* RosanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A0AB59A1F7AA05E008BD858 /* Build configuration list for PBXNativeTarget "RosanUITests" */;
+			buildPhases = (
+				9A0AB58A1F7AA05E008BD858 /* Sources */,
+				9A0AB58B1F7AA05E008BD858 /* Frameworks */,
+				9A0AB58C1F7AA05E008BD858 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A0AB5901F7AA05E008BD858 /* PBXTargetDependency */,
+			);
+			name = RosanUITests;
+			productName = RosanUITests;
+			productReference = 9A0AB58E1F7AA05E008BD858 /* RosanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A0AB56E1F7AA05E008BD858 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Levante;
+				TargetAttributes = {
+					9A0AB5751F7AA05E008BD858 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					9A0AB58D1F7AA05E008BD858 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9A0AB5751F7AA05E008BD858;
+					};
+				};
+			};
+			buildConfigurationList = 9A0AB5711F7AA05E008BD858 /* Build configuration list for PBXProject "Rosan" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A0AB56D1F7AA05E008BD858;
+			productRefGroup = 9A0AB5771F7AA05E008BD858 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A0AB5751F7AA05E008BD858 /* Rosan */,
+				9A0AB58D1F7AA05E008BD858 /* RosanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A0AB5741F7AA05E008BD858 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A481FF41F7B7C57008DE239 /* LiveViewController.xib in Resources */,
+				9A0AB5861F7AA05E008BD858 /* LaunchScreen.storyboard in Resources */,
+				9A4A96621F7B43FC0023110F /* RClassTableViewCell.xib in Resources */,
+				9A481FFE1F7B895B008DE239 /* RLoginViewController.xib in Resources */,
+				9A0AB5A61F7AA091008BD858 /* FirstViewController.xib in Resources */,
+				9AA6D8A31F7AAC1200E40662 /* RHomeViewController.xib in Resources */,
+				9A0AB5831F7AA05E008BD858 /* Assets.xcassets in Resources */,
+				9A481FF91F7B7DCF008DE239 /* LiveTableViewCell.xib in Resources */,
+				9AA6D8801F7AA26100E40662 /* TViewController.xib in Resources */,
+				9A4A966C1F7B4B410023110F /* RCalendarTableViewCell.xib in Resources */,
+				9AA6D8A81F7AAC3200E40662 /* RQuotationViewController.xib in Resources */,
+				9AA6D8AD1F7AAC4200E40662 /* RNewsViewController.xib in Resources */,
+				9A4820031F7B8C2D008DE239 /* RegiftViewController.xib in Resources */,
+				9AA6D8B21F7AAC4E00E40662 /* RMYViewController.xib in Resources */,
+				9A4A96671F7B44550023110F /* RClassCollectionViewCell.xib in Resources */,
+				9AB1741B1F7B633C00629E17 /* RGoodTableViewCell.xib in Resources */,
+				9A0AB5811F7AA05E008BD858 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A0AB58C1F7AA05E008BD858 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1794B2FB4985C7F6E47C2CDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C8F1BD2F6E07B32224E26932 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rosan/Pods-Rosan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3DB6B4E86DB10EFF0672B5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rosan/Pods-Rosan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A0AB5721F7AA05E008BD858 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A481FFD1F7B895B008DE239 /* RLoginViewController.m in Sources */,
+				9AA6D8B51F7AAD0300E40662 /* UIImage+Cropping.m in Sources */,
+				9A481FF81F7B7DCF008DE239 /* LiveTableViewCell.m in Sources */,
+				9A0AB57E1F7AA05E008BD858 /* ViewController.m in Sources */,
+				9A4A966B1F7B4B410023110F /* RCalendarTableViewCell.m in Sources */,
+				9A0AB5891F7AA05E008BD858 /* main.m in Sources */,
+				9AA6D8A71F7AAC3200E40662 /* RQuotationViewController.m in Sources */,
+				9A481FEF1F7B7552008DE239 /* RHomeModel.m in Sources */,
+				9AA6D8A21F7AAC1200E40662 /* RHomeViewController.m in Sources */,
+				9A4820021F7B8C2D008DE239 /* RegiftViewController.m in Sources */,
+				9AB1741A1F7B633C00629E17 /* RGoodTableViewCell.m in Sources */,
+				9AA6D87F1F7AA26100E40662 /* TViewController.m in Sources */,
+				9AA6D8871F7AA84E00E40662 /* RosanBsaeViewController.m in Sources */,
+				9A4A96611F7B43FC0023110F /* RClassTableViewCell.m in Sources */,
+				9A0AB5A51F7AA091008BD858 /* FirstViewController.m in Sources */,
+				9AA6D8AC1F7AAC4200E40662 /* RNewsViewController.m in Sources */,
+				9AA6D88E1F7AAA7700E40662 /* RosanNavigationController.m in Sources */,
+				9AA6D8B11F7AAC4E00E40662 /* RMYViewController.m in Sources */,
+				9A4A96661F7B44550023110F /* RClassCollectionViewCell.m in Sources */,
+				9A481FF31F7B7C57008DE239 /* LiveViewController.m in Sources */,
+				9A0AB57B1F7AA05E008BD858 /* AppDelegate.m in Sources */,
+				9AA6D88A1F7AA91300E40662 /* RosanControllerManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A0AB58A1F7AA05E008BD858 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A0AB5931F7AA05E008BD858 /* RosanUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A0AB5901F7AA05E008BD858 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A0AB5751F7AA05E008BD858 /* Rosan */;
+			targetProxy = 9A0AB58F1F7AA05E008BD858 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A0AB57F1F7AA05E008BD858 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A0AB5801F7AA05E008BD858 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9A0AB5841F7AA05E008BD858 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A0AB5851F7AA05E008BD858 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A0AB5951F7AA05E008BD858 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9A0AB5961F7AA05E008BD858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A0AB5981F7AA05E008BD858 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF2600E92E5EEAFAEEE97A14 /* Pods-Rosan.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hainan Huizhong Car Service Co., Ltd. (5Y2M9394G7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Y2M9394G7;
+				GCC_PREFIX_HEADER = /Users/Levante/Desktop/Rosan/Rosan/RosanPrefixHeader.pch;
+				INFOPLIST_FILE = Rosan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Rosan.com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A0AB5991F7AA05E008BD858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D3353AB004471143DDE2E8E /* Pods-Rosan.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hainan Huizhong Car Service Co., Ltd. (5Y2M9394G7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5Y2M9394G7;
+				GCC_PREFIX_HEADER = /Users/Levante/Desktop/Rosan/Rosan/RosanPrefixHeader.pch;
+				INFOPLIST_FILE = Rosan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Rosan.com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9A0AB59B1F7AA05E008BD858 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RosanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Rosan.com.RosanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Rosan;
+			};
+			name = Debug;
+		};
+		9A0AB59C1F7AA05E008BD858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RosanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Rosan.com.RosanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Rosan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A0AB5711F7AA05E008BD858 /* Build configuration list for PBXProject "Rosan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A0AB5951F7AA05E008BD858 /* Debug */,
+				9A0AB5961F7AA05E008BD858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A0AB5971F7AA05E008BD858 /* Build configuration list for PBXNativeTarget "Rosan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A0AB5981F7AA05E008BD858 /* Debug */,
+				9A0AB5991F7AA05E008BD858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A0AB59A1F7AA05E008BD858 /* Build configuration list for PBXNativeTarget "RosanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A0AB59B1F7AA05E008BD858 /* Debug */,
+				9A0AB59C1F7AA05E008BD858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A0AB56E1F7AA05E008BD858 /* Project object */;
+}
