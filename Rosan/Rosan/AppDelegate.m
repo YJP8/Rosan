@@ -8,9 +8,11 @@
 
 #import "AppDelegate.h"
 #import "TViewController.h"
+#import "RealReachability.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, assign) BOOL isUserReal; // 当前网络是否可用
+@property (nonatomic, assign) NSInteger status; // 当前网络状态
 @end
 
 @implementation AppDelegate
@@ -20,8 +22,57 @@
 //    TViewController *oneVc = [[TViewController alloc] init];
 //    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:oneVc];
     //    self.window.rootViewController = navi;
+    // 方式一
+    [GLobalRealReachability startNotifier];
+    
+    // 方式二
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netWorkChanged:) name:kRealReachabilityChangedNotification object:nil];
     [[RosanControllerManager sharedInstance]createTabbarController];
        return YES;
+}
+
+- (void)netWorkChanged:(NSNotification *)notification
+{
+    RealReachability *reachability = (RealReachability *)notification.object;
+    ReachabilityStatus status = [reachability currentReachabilityStatus];
+    self.isUserReal = YES;
+    switch (status) {
+        case RealStatusNotReachable:
+            self.isUserReal = NO;
+            self.status = 0;
+            [self alertMessage:@"没网络"];
+            [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"pass"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            break;
+        case RealStatusViaWiFi:
+            self.isUserReal = YES;
+            self.status = 1;
+            [self alertMessage:@"WIFI"];
+            [[NSUserDefaults standardUserDefaults] setObject:@"2" forKey:@"pass"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            break;
+        case RealStatusViaWWAN:
+            self.isUserReal = YES;
+            self.status = 2;
+            [self alertMessage:@"2G/3G/4G"];
+            [[NSUserDefaults standardUserDefaults] setObject:@"3" forKey:@"pass"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)alertMessage:(NSString *)message
+{
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:nil cancelButtonTitle:@"取消" otherButtonTitles: nil];
+//    [alertView show];
+}
++ (BOOL)allowsAnyHTTPSCertificateForHost:(NSString*)host{
+    
+    return YES;
+    
 }
 
 + (AppDelegate*)sharedAppDelegate

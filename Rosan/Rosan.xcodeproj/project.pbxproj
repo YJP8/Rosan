@@ -17,6 +17,20 @@
 		9A0AB5931F7AA05E008BD858 /* RosanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AB5921F7AA05E008BD858 /* RosanUITests.m */; };
 		9A0AB5A51F7AA091008BD858 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AB5A31F7AA091008BD858 /* FirstViewController.m */; };
 		9A0AB5A61F7AA091008BD858 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A0AB5A41F7AA091008BD858 /* FirstViewController.xib */; };
+		9A1CCD601F99F0E400602FC2 /* LocalConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD441F99F0E300602FC2 /* LocalConnection.m */; };
+		9A1CCD611F99F0E400602FC2 /* FSMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD481F99F0E300602FC2 /* FSMEngine.m */; };
+		9A1CCD621F99F0E400602FC2 /* FSMStateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD4A1F99F0E300602FC2 /* FSMStateUtil.m */; };
+		9A1CCD631F99F0E400602FC2 /* ReachState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD4C1F99F0E300602FC2 /* ReachState.m */; };
+		9A1CCD641F99F0E400602FC2 /* ReachStateLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD4E1F99F0E300602FC2 /* ReachStateLoading.m */; };
+		9A1CCD651F99F0E400602FC2 /* ReachStateUnloaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD501F99F0E300602FC2 /* ReachStateUnloaded.m */; };
+		9A1CCD661F99F0E400602FC2 /* ReachStateUnReachable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD521F99F0E300602FC2 /* ReachStateUnReachable.m */; };
+		9A1CCD671F99F0E400602FC2 /* ReachStateWIFI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD541F99F0E300602FC2 /* ReachStateWIFI.m */; };
+		9A1CCD681F99F0E400602FC2 /* ReachStateWWAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD561F99F0E300602FC2 /* ReachStateWWAN.m */; };
+		9A1CCD691F99F0E400602FC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A1CCD571F99F0E300602FC2 /* Info.plist */; };
+		9A1CCD6A1F99F0E400602FC2 /* PingFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD5A1F99F0E300602FC2 /* PingFoundation.m */; };
+		9A1CCD6B1F99F0E400602FC2 /* PingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD5C1F99F0E300602FC2 /* PingHelper.m */; };
+		9A1CCD6C1F99F0E400602FC2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9A1CCD5D1F99F0E300602FC2 /* README.md */; };
+		9A1CCD6D1F99F0E400602FC2 /* RealReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CCD5F1F99F0E300602FC2 /* RealReachability.m */; };
 		9A481FEF1F7B7552008DE239 /* RHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A481FEE1F7B7552008DE239 /* RHomeModel.m */; };
 		9A481FF31F7B7C57008DE239 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A481FF11F7B7C57008DE239 /* LiveViewController.m */; };
 		9A481FF41F7B7C57008DE239 /* LiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A481FF21F7B7C57008DE239 /* LiveViewController.xib */; };
@@ -79,6 +93,33 @@
 		9A0AB5A21F7AA090008BD858 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		9A0AB5A31F7AA091008BD858 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		9A0AB5A41F7AA091008BD858 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		9A1CCD431F99F0E300602FC2 /* LocalConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalConnection.h; sourceTree = "<group>"; };
+		9A1CCD441F99F0E300602FC2 /* LocalConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalConnection.m; sourceTree = "<group>"; };
+		9A1CCD461F99F0E300602FC2 /* FSMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMDefines.h; sourceTree = "<group>"; };
+		9A1CCD471F99F0E300602FC2 /* FSMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMEngine.h; sourceTree = "<group>"; };
+		9A1CCD481F99F0E300602FC2 /* FSMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMEngine.m; sourceTree = "<group>"; };
+		9A1CCD491F99F0E300602FC2 /* FSMStateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMStateUtil.h; sourceTree = "<group>"; };
+		9A1CCD4A1F99F0E300602FC2 /* FSMStateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMStateUtil.m; sourceTree = "<group>"; };
+		9A1CCD4B1F99F0E300602FC2 /* ReachState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachState.h; sourceTree = "<group>"; };
+		9A1CCD4C1F99F0E300602FC2 /* ReachState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachState.m; sourceTree = "<group>"; };
+		9A1CCD4D1F99F0E300602FC2 /* ReachStateLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachStateLoading.h; sourceTree = "<group>"; };
+		9A1CCD4E1F99F0E300602FC2 /* ReachStateLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateLoading.m; sourceTree = "<group>"; };
+		9A1CCD4F1F99F0E300602FC2 /* ReachStateUnloaded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachStateUnloaded.h; sourceTree = "<group>"; };
+		9A1CCD501F99F0E300602FC2 /* ReachStateUnloaded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateUnloaded.m; sourceTree = "<group>"; };
+		9A1CCD511F99F0E300602FC2 /* ReachStateUnReachable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachStateUnReachable.h; sourceTree = "<group>"; };
+		9A1CCD521F99F0E300602FC2 /* ReachStateUnReachable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateUnReachable.m; sourceTree = "<group>"; };
+		9A1CCD531F99F0E300602FC2 /* ReachStateWIFI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachStateWIFI.h; sourceTree = "<group>"; };
+		9A1CCD541F99F0E300602FC2 /* ReachStateWIFI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateWIFI.m; sourceTree = "<group>"; };
+		9A1CCD551F99F0E300602FC2 /* ReachStateWWAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachStateWWAN.h; sourceTree = "<group>"; };
+		9A1CCD561F99F0E300602FC2 /* ReachStateWWAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateWWAN.m; sourceTree = "<group>"; };
+		9A1CCD571F99F0E300602FC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A1CCD591F99F0E300602FC2 /* PingFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingFoundation.h; sourceTree = "<group>"; };
+		9A1CCD5A1F99F0E300602FC2 /* PingFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingFoundation.m; sourceTree = "<group>"; };
+		9A1CCD5B1F99F0E300602FC2 /* PingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingHelper.h; sourceTree = "<group>"; };
+		9A1CCD5C1F99F0E300602FC2 /* PingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingHelper.m; sourceTree = "<group>"; };
+		9A1CCD5D1F99F0E300602FC2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9A1CCD5E1F99F0E300602FC2 /* RealReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealReachability.h; sourceTree = "<group>"; };
+		9A1CCD5F1F99F0E300602FC2 /* RealReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealReachability.m; sourceTree = "<group>"; };
 		9A481FED1F7B7552008DE239 /* RHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RHomeModel.h; sourceTree = "<group>"; };
 		9A481FEE1F7B7552008DE239 /* RHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RHomeModel.m; sourceTree = "<group>"; };
 		9A481FF01F7B7C57008DE239 /* LiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveViewController.h; sourceTree = "<group>"; };
@@ -227,9 +268,68 @@
 			path = RosanUITests;
 			sourceTree = "<group>";
 		};
+		9A1CCD411F99F0E300602FC2 /* RealReachability */ = {
+			isa = PBXGroup;
+			children = (
+				9A1CCD421F99F0E300602FC2 /* Connection */,
+				9A1CCD451F99F0E300602FC2 /* FSM */,
+				9A1CCD571F99F0E300602FC2 /* Info.plist */,
+				9A1CCD581F99F0E300602FC2 /* Ping */,
+				9A1CCD5E1F99F0E300602FC2 /* RealReachability.h */,
+				9A1CCD5F1F99F0E300602FC2 /* RealReachability.m */,
+			);
+			path = RealReachability;
+			sourceTree = "<group>";
+		};
+		9A1CCD421F99F0E300602FC2 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				9A1CCD431F99F0E300602FC2 /* LocalConnection.h */,
+				9A1CCD441F99F0E300602FC2 /* LocalConnection.m */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		9A1CCD451F99F0E300602FC2 /* FSM */ = {
+			isa = PBXGroup;
+			children = (
+				9A1CCD461F99F0E300602FC2 /* FSMDefines.h */,
+				9A1CCD471F99F0E300602FC2 /* FSMEngine.h */,
+				9A1CCD481F99F0E300602FC2 /* FSMEngine.m */,
+				9A1CCD491F99F0E300602FC2 /* FSMStateUtil.h */,
+				9A1CCD4A1F99F0E300602FC2 /* FSMStateUtil.m */,
+				9A1CCD4B1F99F0E300602FC2 /* ReachState.h */,
+				9A1CCD4C1F99F0E300602FC2 /* ReachState.m */,
+				9A1CCD4D1F99F0E300602FC2 /* ReachStateLoading.h */,
+				9A1CCD4E1F99F0E300602FC2 /* ReachStateLoading.m */,
+				9A1CCD4F1F99F0E300602FC2 /* ReachStateUnloaded.h */,
+				9A1CCD501F99F0E300602FC2 /* ReachStateUnloaded.m */,
+				9A1CCD511F99F0E300602FC2 /* ReachStateUnReachable.h */,
+				9A1CCD521F99F0E300602FC2 /* ReachStateUnReachable.m */,
+				9A1CCD531F99F0E300602FC2 /* ReachStateWIFI.h */,
+				9A1CCD541F99F0E300602FC2 /* ReachStateWIFI.m */,
+				9A1CCD551F99F0E300602FC2 /* ReachStateWWAN.h */,
+				9A1CCD561F99F0E300602FC2 /* ReachStateWWAN.m */,
+			);
+			path = FSM;
+			sourceTree = "<group>";
+		};
+		9A1CCD581F99F0E300602FC2 /* Ping */ = {
+			isa = PBXGroup;
+			children = (
+				9A1CCD591F99F0E300602FC2 /* PingFoundation.h */,
+				9A1CCD5A1F99F0E300602FC2 /* PingFoundation.m */,
+				9A1CCD5B1F99F0E300602FC2 /* PingHelper.h */,
+				9A1CCD5C1F99F0E300602FC2 /* PingHelper.m */,
+				9A1CCD5D1F99F0E300602FC2 /* README.md */,
+			);
+			path = Ping;
+			sourceTree = "<group>";
+		};
 		9AA6D8811F7AA83300E40662 /* RosanBase */ = {
 			isa = PBXGroup;
 			children = (
+				9A1CCD411F99F0E300602FC2 /* RealReachability */,
 				9AA6D8821F7AA83300E40662 /* Controller */,
 				9AA6D8831F7AA83300E40662 /* Model */,
 				9AA6D8841F7AA83300E40662 /* View */,
@@ -515,6 +615,7 @@
 			files = (
 				9A481FF41F7B7C57008DE239 /* LiveViewController.xib in Resources */,
 				9A0AB5861F7AA05E008BD858 /* LaunchScreen.storyboard in Resources */,
+				9A1CCD691F99F0E400602FC2 /* Info.plist in Resources */,
 				9A4A96621F7B43FC0023110F /* RClassTableViewCell.xib in Resources */,
 				9A481FFE1F7B895B008DE239 /* RLoginViewController.xib in Resources */,
 				9A0AB5A61F7AA091008BD858 /* FirstViewController.xib in Resources */,
@@ -525,6 +626,7 @@
 				9A4A966C1F7B4B410023110F /* RCalendarTableViewCell.xib in Resources */,
 				9AA6D8A81F7AAC3200E40662 /* RQuotationViewController.xib in Resources */,
 				9AA6D8AD1F7AAC4200E40662 /* RNewsViewController.xib in Resources */,
+				9A1CCD6C1F99F0E400602FC2 /* README.md in Resources */,
 				9A4820031F7B8C2D008DE239 /* RegiftViewController.xib in Resources */,
 				9AA6D8B21F7AAC4E00E40662 /* RMYViewController.xib in Resources */,
 				9A4A96671F7B44550023110F /* RClassCollectionViewCell.xib in Resources */,
@@ -595,15 +697,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1CCD671F99F0E400602FC2 /* ReachStateWIFI.m in Sources */,
+				9A1CCD661F99F0E400602FC2 /* ReachStateUnReachable.m in Sources */,
 				9A481FFD1F7B895B008DE239 /* RLoginViewController.m in Sources */,
+				9A1CCD6B1F99F0E400602FC2 /* PingHelper.m in Sources */,
 				9AA6D8B51F7AAD0300E40662 /* UIImage+Cropping.m in Sources */,
 				9A481FF81F7B7DCF008DE239 /* LiveTableViewCell.m in Sources */,
+				9A1CCD6D1F99F0E400602FC2 /* RealReachability.m in Sources */,
+				9A1CCD641F99F0E400602FC2 /* ReachStateLoading.m in Sources */,
+				9A1CCD621F99F0E400602FC2 /* FSMStateUtil.m in Sources */,
 				9A0AB57E1F7AA05E008BD858 /* ViewController.m in Sources */,
 				9A4A966B1F7B4B410023110F /* RCalendarTableViewCell.m in Sources */,
+				9A1CCD681F99F0E400602FC2 /* ReachStateWWAN.m in Sources */,
 				9A0AB5891F7AA05E008BD858 /* main.m in Sources */,
 				9AA6D8A71F7AAC3200E40662 /* RQuotationViewController.m in Sources */,
 				9A481FEF1F7B7552008DE239 /* RHomeModel.m in Sources */,
 				9AA6D8A21F7AAC1200E40662 /* RHomeViewController.m in Sources */,
+				9A1CCD651F99F0E400602FC2 /* ReachStateUnloaded.m in Sources */,
+				9A1CCD601F99F0E400602FC2 /* LocalConnection.m in Sources */,
+				9A1CCD6A1F99F0E400602FC2 /* PingFoundation.m in Sources */,
 				9A4820021F7B8C2D008DE239 /* RegiftViewController.m in Sources */,
 				9AB1741A1F7B633C00629E17 /* RGoodTableViewCell.m in Sources */,
 				9AA6D87F1F7AA26100E40662 /* TViewController.m in Sources */,
@@ -612,11 +724,13 @@
 				9A0AB5A51F7AA091008BD858 /* FirstViewController.m in Sources */,
 				9AA6D8AC1F7AAC4200E40662 /* RNewsViewController.m in Sources */,
 				9AA6D88E1F7AAA7700E40662 /* RosanNavigationController.m in Sources */,
+				9A1CCD611F99F0E400602FC2 /* FSMEngine.m in Sources */,
 				9AA6D8B11F7AAC4E00E40662 /* RMYViewController.m in Sources */,
 				9A4A96661F7B44550023110F /* RClassCollectionViewCell.m in Sources */,
 				9A481FF31F7B7C57008DE239 /* LiveViewController.m in Sources */,
 				9A0AB57B1F7AA05E008BD858 /* AppDelegate.m in Sources */,
 				9AA6D88A1F7AA91300E40662 /* RosanControllerManager.m in Sources */,
+				9A1CCD631F99F0E400602FC2 /* ReachState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,11 +881,11 @@
 			baseConfigurationReference = EF2600E92E5EEAFAEEE97A14 /* Pods-Rosan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hainan Huizhong Car Service Co., Ltd. (5Y2M9394G7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Y2M9394G7;
-				GCC_PREFIX_HEADER = /Users/Levante/Desktop/Rosan/Rosan/RosanPrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Levante/Rosan/Rosan/Rosan/RosanPrefixHeader.pch;
 				INFOPLIST_FILE = Rosan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -788,11 +902,11 @@
 			baseConfigurationReference = 0D3353AB004471143DDE2E8E /* Pods-Rosan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hainan Huizhong Car Service Co., Ltd. (5Y2M9394G7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Y2M9394G7;
-				GCC_PREFIX_HEADER = /Users/Levante/Desktop/Rosan/Rosan/RosanPrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Levante/Rosan/Rosan/Rosan/RosanPrefixHeader.pch;
 				INFOPLIST_FILE = Rosan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
