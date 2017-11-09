@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewDetailViewController">
+            <connections>
+                <outlet property="dateLabel" destination="aqn-Q7-liY" id="0k3-L4-7jc"/>
+                <outlet property="titleLabel" destination="qa9-Ga-fyA" id="RvX-qQ-FVJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="nUw-kL-ZZN" id="HNF-4F-VbL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUw-kL-ZZN">
+                    <rect key="frame" x="0.0" y="134" width="375" height="533"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="y2J-Ru-P54"/>
+                    </connections>
+                </webView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa9-Ga-fyA">
+                    <rect key="frame" x="8" y="74" width="359" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ybe-1I-iQG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqn-Q7-liY">
+                    <rect key="frame" x="8" y="114" width="359" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="KG4-7a-pPa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="qa9-Ga-fyA" secondAttribute="trailing" constant="8" id="3fI-fv-CWK"/>
+                <constraint firstItem="aqn-Q7-liY" firstAttribute="top" secondItem="qa9-Ga-fyA" secondAttribute="bottom" id="Myl-IT-ZVf"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="nUw-kL-ZZN" secondAttribute="bottom" id="NM5-zb-Hls"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="aqn-Q7-liY" secondAttribute="trailing" constant="8" id="T5m-Ga-5lh"/>
+                <constraint firstItem="nUw-kL-ZZN" firstAttribute="top" secondItem="aqn-Q7-liY" secondAttribute="bottom" id="TdY-dC-Oxn"/>
+                <constraint firstItem="qa9-Ga-fyA" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="WmB-jT-VUq"/>
+                <constraint firstItem="nUw-kL-ZZN" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="mxo-uW-MNr"/>
+                <constraint firstItem="nUw-kL-ZZN" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="rZq-J4-1Ga"/>
+                <constraint firstItem="aqn-Q7-liY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="8" id="sTH-TA-M9O"/>
+                <constraint firstItem="qa9-Ga-fyA" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="8" id="vNq-K6-xng"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="32.5" y="92.5"/>
+        </view>
+    </objects>
+</document>

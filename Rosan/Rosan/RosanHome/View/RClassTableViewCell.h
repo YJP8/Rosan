@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RClassTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface RClassTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *with;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *with1;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *with2;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *with3;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *with4;
 
-@property (nonatomic,strong)UICollectionView *collectionview;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *viewwith1;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *viewwith2;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *viewwith3;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *viewwith4;
 @property (nonatomic, strong)void(^classCellBlock)(NSInteger infoID);
 
 @end

@@ -11,6 +11,7 @@
 #import "FirstViewController.h"
 #import <AFNetworking/AFNetworking.h>
 #import <MJRefresh/MJRefresh.h>
+#import "PlayerDetailViewController.h"
 
 @interface LiveViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -26,6 +27,7 @@
     [self creatTableView];
     [self requestData];
     [self backButton];
+    
     
     // 刷新
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -56,15 +58,15 @@
 }
 
 - (void)requestData {
-    _page = 10;
+    _page = 0;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:@"http://appapi.kxt.com/Video/list_video?system=ios&version=5.3.2&idfv=051936F6-0200-4995-8BE3-9D1891DDAFE6&cid=144&markid=0&num=10" parameters:@"" progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:@"http://106.14.114.49:8085/api/video?limit=10&offset=0" parameters:@"" progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
         NSLog(@"%@",dict);
-        self.dataArray = [dict objectForKey:@"data"];
+        self.dataArray = [dict objectForKey:@"list"];
         [self.tableView reloadData];
         [_tableView.mj_header endRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -74,17 +76,17 @@
 }
 
 - (void) requestUpDate {
-    _page = _page + 10;
+    _page = _page + 1;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    NSString *str = [NSString stringWithFormat:@"http://appapi.kxt.com/Video/list_video?system=ios&version=5.3.2&idfv=051936F6-0200-4995-8BE3-9D1891DDAFE6&cid=144&markid=0&num=%ld",_page];
+    NSString *str = [NSString stringWithFormat:@"http://106.14.114.49:8085/api/video?limit=10&offset=%ld",_page];
     [manager GET:str parameters:@"" progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
         NSLog(@"%@",dict);
         NSMutableArray *result = [[NSMutableArray alloc]initWithArray:_dataArray];
-        [result addObjectsFromArray: [dict objectForKey:@"data"]];
+        [result addObjectsFromArray: [dict objectForKey:@"list"]];
         _dataArray = result;
         [self.tableView reloadData];
         [_tableView.mj_footer endRefreshing];
@@ -111,21 +113,20 @@
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
     [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[[dic objectForKey:@"publish_time"] doubleValue]];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[[dic objectForKey:@"publishTime"] doubleValue]];
     NSString* dateString = [formatter stringFromDate:date];
     cell.time.text = dateString;
     cell.title.text = [dic objectForKey:@"title"];
-    cell.count.text = [dic objectForKey:@"play_count"];
+    cell.count.text = [dic objectForKey:@"playCount"];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    FirstViewController *first = [[FirstViewController alloc] init];
     NSDictionary *dic = _dataArray[indexPath.row];
-    first.urlStr = [dic objectForKey:@"url"];
-    first.titleStr = @"财经直播";
-    first.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:first animated:YES];
+    PlayerDetailViewController *player = [[PlayerDetailViewController alloc] init];
+    player.hidesBottomBarWhenPushed = YES;
+    player.idStr = [dic objectForKey:@"id"];
+    [self.navigationController pushViewController:player animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

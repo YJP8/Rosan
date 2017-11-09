@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - IQKeyboardManager (4.0.13)
+  - Masonry (1.1.0)
   - MJRefresh (3.1.12)
   - SDCycleScrollView (1.73):
     - SDWebImage (~> 4.0.0)
@@ -22,23 +23,28 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - Toast (3.1.0)
+  - XXNibBridge (2.2.3)
 
 DEPENDENCIES:
   - AFNetworking
   - IQKeyboardManager
+  - Masonry
   - MJRefresh
   - SDCycleScrollView
   - SDWebImage
   - Toast
+  - XXNibBridge (~> 2.2.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDCycleScrollView: d0fd5fe40a80918371fd8939214eb3be81033d83
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
+  XXNibBridge: 70adcf1e85a2b5500d9de5f12781944dc51b0521
 
-PODFILE CHECKSUM: c22c523a7db8f45361a157e8edca24004543e5af
+PODFILE CHECKSUM: 035d8f687bd32422417c1e105b72c6d1132dbbc9
 
 COCOAPODS: 1.1.1

@@ -2,7 +2,7 @@
 //  RNewsViewController.h
 //  Rosan
 //
-//  Created by Levante on 2017/9/26.
+//  Created by Levante on 2017/10/24.
 //  Copyright © 2017年 Levante. All rights reserved.
 //
 
@@ -10,4 +10,5 @@
 
 @interface RNewsViewController : RosanBsaeViewController
 
+@property (nonatomic)NSInteger inter;
 @end

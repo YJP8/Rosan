@@ -7,109 +7,137 @@
 //
 
 #import "RQuotationViewController.h"
+#import "FirstViewController.h"
+#import <AFNetworking/AFNetworking.h>
 
-@interface RQuotationViewController ()<UIWebViewDelegate>
-@property (strong, nonatomic) IBOutlet UIWebView *webView;
-@property (nonatomic, retain)UIActivityIndicatorView *actIv;
-@property (nonatomic, retain)UIView *loadingView;
-@property (strong, nonatomic) IBOutlet UIView *bgView;
-@property (nonatomic, strong)NSMutableURLRequest *request;
+@interface RQuotationViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, strong)NSArray *dataArray;
+@property (nonatomic)NSInteger tags;
 @property (nonatomic, strong)NSTimer *timer;
 @end
 
 @implementation RQuotationViewController
 
+
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-//    self.webView.hidden = YES;
+    if (self.titleStr) {
+        self.navigationItem.title = self.titleStr;
+    }else {
+        self.navigationItem.title = @"股票";
+    }
+    [self creatTableView];
+    if ([self.titleStr isEqualToString:@"外汇"]){
+        _tags = 1;
+    }else if ([self.titleStr isEqualToString:@"债券"]){
+        _tags = 5;
+    }else if ([self.titleStr isEqualToString:@"沪深"]){
+        _tags = 6;
+    }else if ([self.titleStr isEqualToString:@"股指"]){
+        _tags = 4;
+    }else if ([self.titleStr isEqualToString:@"商品"]){
+        _tags = 3;
+    }else {
+        _tags = 2;
+    }
+    [self requestShopData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"行情";
-    _loadingView = [[UIView alloc] init];
-    [self.view addSubview:self.loadingView];
-    
-    NSString *str = @"http://m.kxt.com/quotes/";
-    str = [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    NSURL *url = [NSURL URLWithString:str];
-    self.request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:5.0];
-    self.webView.opaque = NO;
-    self.webView.backgroundColor = [UIColor clearColor];
-    [self.webView loadRequest:self.request];
-    
-    for (UIView * views in [self.webView subviews]) {
-        if ([views isKindOfClass:[UIScrollView class]]) {
-            [(UIScrollView *)views setShowsHorizontalScrollIndicator:NO];
-            [(UIScrollView *)views setShowsVerticalScrollIndicator:NO];
-            for (UIView * inScrollView in views.subviews) {
-                if ([inScrollView isKindOfClass:[UIImageView class]]) {
-                    inScrollView.hidden = YES;
-                }
-            }
-        }
-    }
-    [self backButton];
-}
-
-- (void)clickBackButton {
-    if ([self.webView canGoBack]) {
-        [self.webView goBack];
+    if (self.inter == 1) {
+        [self backButton];
     }else {
-        [self.view resignFirstResponder];
-        [self.navigationController popViewControllerAnimated:YES];
+        
     }
+    self.timer = [NSTimer timerWithTimeInterval:10 target:self selector:@selector(updateTimer)userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+    [NSThread detachNewThreadSelector:@selector(bannerStart)toTarget:self withObject:nil];
 }
-
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    _loadingView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+- (void)bannerStart{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(updateTimer)userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
+    [[NSRunLoop currentRunLoop] run];
+    
 }
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    self.webView.hidden = YES;
-    //清除webView的缓存
-    [[NSURLCache sharedURLCache] removeAllCachedResponses];
-    //清除请求
-    [[NSURLCache sharedURLCache] removeCachedResponseForRequest:self.request];
-    //清除cookies
-    NSHTTPCookie *cookie;
-    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (cookie in [storage cookies]) {
-        [storage deleteCookie:cookie];
-    }
-    return YES;
+- (void)updateTimer {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self requestShopData];
+    });
 }
-
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    self.bgView.hidden = NO;
-    self.actIv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhite];
-    self.actIv.frame = CGRectMake(0, 64, 32, 32);
-    self.actIv.center = self.loadingView.center;
-    [self.loadingView addSubview:self.actIv];
-    [self.actIv startAnimating];
-    [self.webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('inside-head')[0].style.display = 'none'"];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-
-    [self.actIv stopAnimating];
-    [self.loadingView removeFromSuperview];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(action) userInfo:nil repeats:NO];
-    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
-}
-
-- (void)action {
-    self.bgView.hidden = YES;
-    self.webView.hidden = NO;
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     [self.timer invalidate];
 }
+- (void)requestShopData {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    NSString *url = [NSString stringWithFormat:@"http://106.14.114.49:8085/api/list?type=%ld",_tags];
+    [manager GET:url parameters:@"" progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        self.dataArray = [dict objectForKey:@"list"];
+        [self.tableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+}
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    [self.actIv stopAnimating];
-    [self.loadingView removeFromSuperview];
+- (void)creatTableView {
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.showsVerticalScrollIndicator = NO;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.backgroundColor = [UIColor whiteColor];
+    [_tableView registerClass:[QuotationTableViewCell class] forCellReuseIdentifier:@"cell"];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _dataArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    QuotationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[QuotationTableViewCell description]];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"QuotationTableViewCell" owner:self options:nil] firstObject];
+    }
+    if (_dataArray.count == 0) {
+        
+    }else {
+        NSDictionary *dic = _dataArray[indexPath.row];
+        cell.name.text = [dic objectForKey:@"prodName"];
+        cell.price.text = [NSString stringWithFormat:@"%.2f",[[dic objectForKey:@"lastPx"]floatValue]];
+        cell.change.text = [NSString stringWithFormat:@"%.2f",[[dic objectForKey:@"pxChange"]floatValue]];
+        cell.changeRage.text = [NSString stringWithFormat:@"%.2f",[[dic objectForKey:@"pxChangeRate"]floatValue]];
+        cell.yesterday.text = [NSString stringWithFormat:@"%.2f",[[dic objectForKey:@"preclosePx"]floatValue]];
+        if ([cell.change.text floatValue] > 0) {
+            cell.price.textColor = [UIColor redColor];
+            cell.change.textColor = [UIColor redColor];
+            cell.changeRage.textColor = [UIColor redColor];
+            cell.yesterday.textColor = [UIColor redColor];
+        }else if ([cell.change.text floatValue] == 0){
+            cell.price.textColor = [UIColor grayColor];
+            cell.change.textColor = [UIColor grayColor];
+            cell.changeRage.textColor = [UIColor grayColor];
+            cell.yesterday.textColor = [UIColor grayColor];
+        }else {
+            cell.price.textColor = [UIColor greenColor];
+            cell.change.textColor = [UIColor greenColor];
+            cell.changeRage.textColor = [UIColor greenColor];
+            cell.yesterday.textColor = [UIColor greenColor];
+        }
+    }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FirstViewController *first = [[FirstViewController alloc] init];
+    NSDictionary *dic = _dataArray[indexPath.row];
+    first.urlStr = [NSString stringWithFormat:@"http://106.14.114.49:8085/info.html?symbol=%@",[dic objectForKey:@"code"]];
+    first.titleStr = [dic objectForKey:@"prodName"];
+    first.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:first animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

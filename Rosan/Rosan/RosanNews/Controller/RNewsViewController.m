@@ -2,116 +2,140 @@
 //  RNewsViewController.m
 //  Rosan
 //
-//  Created by Levante on 2017/9/26.
+//  Created by Levante on 2017/10/24.
 //  Copyright © 2017年 Levante. All rights reserved.
 //
 
 #import "RNewsViewController.h"
+#import "RGoodTableViewCell.h"
+#import <AFNetworking/AFNetworking.h>
+#import "FirstViewController.h"
+#import <MJRefresh/MJRefresh.h>
+#import "NewDetailViewController.h"
 
-@interface RNewsViewController ()<UIWebViewDelegate>
-@property (strong, nonatomic) IBOutlet UIWebView *webView;
-@property (nonatomic, retain)UIActivityIndicatorView *actIv;
-@property (nonatomic, retain)UIView *loadingView;
-@property (strong, nonatomic) IBOutlet UIView *bgView;
-@property (nonatomic, copy)NSString *titleStr;
-@property (nonatomic, strong)NSMutableURLRequest *request;
-@property (nonatomic, strong)NSTimer *timer;
+@interface RNewsViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic)NSInteger page;
 @end
 
 @implementation RNewsViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _dataArray = [NSMutableArray array];
+    [self creatTableView];
+    [self requestData];
     self.navigationItem.title = @"资讯";
-    _loadingView = [[UIView alloc] init];
-    [self.view addSubview:self.loadingView];
-    
-    NSString *str = @"http://m.kxt.com/";
-    str = [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    NSURL *url = [NSURL URLWithString:str];
-    self.request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:5.0];
-    self.webView.opaque = NO;
-    self.webView.backgroundColor = [UIColor clearColor];
-    [self.webView loadRequest:self.request];
-    
-    for (UIView * views in [self.webView subviews]) {
-        if ([views isKindOfClass:[UIScrollView class]]) {
-            [(UIScrollView *)views setShowsHorizontalScrollIndicator:NO];
-            [(UIScrollView *)views setShowsVerticalScrollIndicator:NO];
-            for (UIView * inScrollView in views.subviews) {
-                if ([inScrollView isKindOfClass:[UIImageView class]]) {
-                    inScrollView.hidden = YES;
-                }
-            }
-        }
+    if (self.inter == 1) {
+        [self backButton];
     }
-    self.navigationItem.leftBarButtonItem = nil;
-}
-
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    _loadingView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-}
-
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    self.webView.hidden = YES;
-    //清除webView的缓存
-    [[NSURLCache sharedURLCache] removeAllCachedResponses];
-    //清除请求
-    [[NSURLCache sharedURLCache] removeCachedResponseForRequest:self.request];
-    //清除cookies
-    NSHTTPCookie *cookie;
-    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (cookie in [storage cookies]) {
-        [storage deleteCookie:cookie];
-    }
-    return YES;
-}
-
-
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    self.bgView.hidden = NO;
-    self.actIv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhite];
-    self.actIv.frame = CGRectMake(0, 64, 32, 32);
-    self.actIv.center = self.loadingView.center;
-    [self.loadingView addSubview:self.actIv];
-    [self.actIv startAnimating];
-    [self.webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('logowrapper')[0].style.display = 'none'"];
-    [self.webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('inside-head')[0].style.display = 'none'"];
-    [self.webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('head-link')[0].style.display = 'none'"];
-    [self.webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('baidugg')[0].style.display = 'none'"];
-    [self.webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('main-nav')[0].style.display = 'none'"];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-
-    [self.actIv stopAnimating];
-    [self.loadingView removeFromSuperview];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(action) userInfo:nil repeats:NO];
-    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
-}
-
-- (void)action {
-    self.bgView.hidden = YES;
-    self.webView.hidden = NO;
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    [self.actIv stopAnimating];
-    [self.loadingView removeFromSuperview];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [self.timer invalidate];
+    
+    // 刷新
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self requestData];
+    }];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    // 设置文字
+    [header setTitle:@"下拉刷新数据" forState:MJRefreshStateIdle];
+    [header setTitle:@"松手立即刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"正在刷新" forState:MJRefreshStateRefreshing];
+    self.tableView.mj_header = header;
+    
+    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self requestUpDate];
+    }];
+    [footer setTitle:@"上拉加载数据" forState:MJRefreshStateIdle];
+    [footer setTitle:@"松手立即加载" forState:MJRefreshStatePulling];
+    [footer setTitle:@"正在加载" forState:MJRefreshStateRefreshing];
+    self.tableView.mj_footer = footer;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
 
+- (void)creatTableView {
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.showsVerticalScrollIndicator = NO;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)requestData {
+    _page = 0;
+     [_dataArray removeAllObjects];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:@"http://106.14.114.49:8085/api/news?limit=10&offset=0" parameters:@"" progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        [_dataArray addObjectsFromArray:[dict objectForKey:@"list"]];
+        [self.tableView reloadData];
+        [_tableView.mj_header endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [_tableView.mj_header endRefreshing];
+    }];
+    
+}
+
+- (void)requestUpDate {
+    _page = _page + 1;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        NSString *str = [NSString stringWithFormat:@"http://106.14.114.49:8085/api/news?limit=10&offset=%ld",_page];
+    [manager GET:str parameters:@"" progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        [_dataArray addObjectsFromArray:[dict objectForKey:@"list"]];
+        [self.tableView reloadData];
+        [_tableView.mj_footer endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [_tableView.mj_footer endRefreshing];
+    }];
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    RGoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[RGoodTableViewCell description]];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"RGoodTableViewCell" owner:self options:nil] firstObject];
+    }
+    cell.selectionStyle = UITableViewCellAccessoryNone;
+    cell.backgroundColor = [UIColor whiteColor];
+    if (_dataArray.count == 0) {
+        
+    }else {
+        NSDictionary *dic = _dataArray[indexPath.row];
+        [cell.thumb sd_setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"thumb"]]];
+        cell.titles.text = [dic objectForKey:@"title"];
+        cell.tags.text = [dic objectForKey:@"tags"];
+        // 格式化时间
+        NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+        formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
+        [formatter setDateStyle:NSDateFormatterMediumStyle];
+        [formatter setTimeStyle:NSDateFormatterShortStyle];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        
+        // 毫秒值转化为秒
+        NSDate* date = [NSDate dateWithTimeIntervalSince1970:[[dic objectForKey:@"addTime"] doubleValue]];
+        NSString* dateString = [formatter stringFromDate:date];
+        cell.addtime.text = dateString;
+    }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dic = _dataArray[indexPath.row];
+    NewDetailViewController *first = [[NewDetailViewController alloc] init];
+    first.idStr = [dic objectForKey:@"id"];
+    first.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:first animated:YES];
 }
 
 @end

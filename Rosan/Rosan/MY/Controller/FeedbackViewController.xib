@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedbackViewController">
+            <connections>
+                <outlet property="checkBtn" destination="XjK-BC-pTy" id="Blf-lU-GHm"/>
+                <outlet property="feedBackTextView" destination="T1T-ZA-AWI" id="rtx-dO-kpC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-Pg-R2r">
+                    <rect key="frame" x="60" y="262" width="255" height="35"/>
+                    <color key="backgroundColor" red="0.40615013239999997" green="0.77774941919999996" blue="0.69023209809999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="255" id="4mz-0n-Rwl"/>
+                        <constraint firstAttribute="height" constant="35" id="gun-r8-16O"/>
+                    </constraints>
+                    <state key="normal" title="提交">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="feedNote:" destination="-1" eventType="touchUpInside" id="dIH-wt-Bx9"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T1T-ZA-AWI" customClass="CMInputView">
+                    <rect key="frame" x="30" y="84" width="315" height="140"/>
+                    <color key="backgroundColor" red="0.87845605609999999" green="0.87843710180000001" blue="0.87844079730000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="iiZ-mu-itf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjK-BC-pTy">
+                    <rect key="frame" x="292" y="232" width="19" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="19" id="OxF-H0-lBh"/>
+                        <constraint firstAttribute="height" constant="22" id="azf-Bu-mMS"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="checkbox_normal">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="checkbox_select"/>
+                    <connections>
+                        <action selector="checkBtnClick:" destination="-1" eventType="touchUpInside" id="QSC-cz-pQx"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="匿名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e33-bc-WVI">
+                    <rect key="frame" x="314" y="232" width="31" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Vqe-RA-RS5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OdZ-Pg-R2r" firstAttribute="top" secondItem="T1T-ZA-AWI" secondAttribute="bottom" constant="38" id="6Se-Om-Kjk"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="T1T-ZA-AWI" secondAttribute="trailing" constant="30" id="9gq-fv-mr2"/>
+                <constraint firstItem="e33-bc-WVI" firstAttribute="leading" secondItem="XjK-BC-pTy" secondAttribute="trailing" constant="3" id="FN5-yb-9P2"/>
+                <constraint firstItem="T1T-ZA-AWI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NdG-lb-OcN"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="e33-bc-WVI" secondAttribute="trailing" constant="30" id="VA1-bD-fvW"/>
+                <constraint firstItem="T1T-ZA-AWI" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="cBV-fM-vMk"/>
+                <constraint firstItem="OdZ-Pg-R2r" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fGN-qc-Pjq"/>
+                <constraint firstItem="XjK-BC-pTy" firstAttribute="top" secondItem="T1T-ZA-AWI" secondAttribute="bottom" constant="8" id="oxY-gI-J69"/>
+                <constraint firstItem="T1T-ZA-AWI" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="pP6-qh-Tic"/>
+                <constraint firstItem="e33-bc-WVI" firstAttribute="top" secondItem="T1T-ZA-AWI" secondAttribute="bottom" constant="8" id="vyu-S0-7d0"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="25.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="checkbox_normal" width="20" height="20"/>
+        <image name="checkbox_select" width="20" height="20"/>
+    </resources>
+</document>

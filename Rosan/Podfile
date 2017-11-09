@@ -8,4 +8,6 @@ target 'Rosan' do
     pod 'SDCycleScrollView'
     pod 'SDWebImage'
     pod 'MJRefresh'
+    pod 'XXNibBridge', '~> 2.2.3'
+    pod 'Masonry'
 end

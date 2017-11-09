@@ -10,4 +10,6 @@
 
 @interface LiveViewController : RosanBsaeViewController
 
+@property (nonatomic)NSInteger inter;
+
 @end
