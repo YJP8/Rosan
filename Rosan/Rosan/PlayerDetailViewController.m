@@ -245,11 +245,4 @@ static NSInteger networkStatus = -1;
     [self.navigationController pushViewController:player animated:YES];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 @end

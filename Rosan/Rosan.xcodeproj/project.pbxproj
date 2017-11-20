@@ -1085,7 +1085,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hainan Huizhong Car Service Co., Ltd. (5Y2M9394G7)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				GCC_PREFIX_HEADER = /Users/Levante/Rosan/Rosan/Rosan/RosanPrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Levante/Desktop/gitHub/Rosan/Rosan/Rosan/RosanPrefixHeader.pch;
 				INFOPLIST_FILE = Rosan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1106,7 +1106,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hainan Huizhong Car Service Co., Ltd. (5Y2M9394G7)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				GCC_PREFIX_HEADER = /Users/Levante/Rosan/Rosan/Rosan/RosanPrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/Levante/Desktop/gitHub/Rosan/Rosan/Rosan/RosanPrefixHeader.pch;
 				INFOPLIST_FILE = Rosan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
